@@ -1,0 +1,1 @@
+-- This is how you do comments in cassandra (cql files)
