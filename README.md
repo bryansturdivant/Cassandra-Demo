@@ -2,9 +2,19 @@
 
 ## Prerequisites:
 
+Install the latest version of Java on your device (Java 17) through Oracle
+- https://www.oracle.com/java/technologies/downloads/#java17
+Check if Java is properly installed on your machine
+```powershell
+java --version
+```
+
 Make sure Docker is installed on your machine:
 - **Docker Desktop**: [docker.com](https://www.docker.com/) - Follow installation instructions
 - *Note: The Docker method is by far the simplest approach*
+```powershell
+docker --version
+```
 
 ## Set up
 ### 1. Start the Cassandra container:
@@ -59,7 +69,7 @@ Once in the interactive shell, you can query the database:
 ### Example with USE:
 ```sql
 USE store;
-SELECT \* FROM shopping_cart;
+SELECT * FROM shopping_cart;
 ```
 ### Example without USE:
 ```sql
