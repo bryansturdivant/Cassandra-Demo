@@ -12,7 +12,7 @@ last_update_timestamp timestamp
 );
 
 -- Insert some data
-INSERT INTO store.shopping_cart497
+INSERT INTO store.shopping_cart
 (userid, item_count, last_update_timestamp)
 VALUES ('9876', 2, toTimeStamp(now()));
 INSERT INTO store.shopping_cart
