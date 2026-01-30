@@ -3,7 +3,7 @@ Quick Set up:
 QUICK SET UP for everyone:
 
 Make sure Docker is installed on your machine:
-Docker: Docker.com - Accelerated Container Application Development// install docker desktop - follow instructions
+Docker: Docker.com - Accelerated Container Application Development// install docker desktop - follow instructions - Docker method is by far the most simple
 
 Start the Cassandra container:
 
