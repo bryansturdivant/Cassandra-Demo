@@ -83,7 +83,9 @@ DROP KEYSPACE keyspace_name;
 
 ## CRUD Examples for Video/Reference:
 
-### 1. Create: 
+### 1. Create/Insert: 
+
+Create: 
 
 ```sql
 CREATE KEYSPACE IF NOT EXISTS cityDB WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor' : 1};
@@ -98,6 +100,15 @@ CREATE TABLE IF NOT EXISTS cityDB.cities (
     population int
 );
 ```
+
+Insert:
+
+```sql
+INSERT INTO cityDB.cities
+(id, name, countrycode, district, population)
+VALUES(6, 'Rotterdam', 'NLD', 'Zuid-Holland', 593321)
+```
+
 
 ### 2. Read:
 
