@@ -1,19 +1,31 @@
-Quick Set up:
+# Quick Set up:
 
-QUICK SET UP for everyone:
+## Prerequisites:
 
 Make sure Docker is installed on your machine:
-Docker: Docker.com - Accelerated Container Application Development// install docker desktop - follow instructions - Docker method is by far the most simple
+- **Docker Desktop**: [docker.com](https://www.docker.com/) - Follow installation instructions
+- *Note: The Docker method is by far the simplest approach*
 
-Start the Cassandra container:
-
+## Set up
+### 1. Start the Cassandra container:
+```bash
 docker run -d --name cassandra -p 9042:9042 cassandra
+```
+### 2. Load the setup script:
 
-Load the setup script (lets call it data.cql for this example):
+Assuming set up script is `data.cql` (it is):
 
+**PowerShell**
+```powershell
 Get-Content data.cql | docker exec -i cassandra cqlsh
+```
 
-**_Example start up script: _**
+**Bash/Linux/Mac**
+```bash
+cat data.cql | docker exec -i cassandra cqlsh
+```
+
+###Example Startup Script
 
 CREATE KEYSPACE IF NOT EXISTS store WITH REPLICATION =
 { 'class' : 'SimpleStrategy',
@@ -33,21 +45,26 @@ INSERT INTO store.shopping_cart
 (userid, item_count, last_update_timestamp)
 VALUES ('1234', 5, toTimeStamp(now()));
 
-**_Notice in the script that the keyspace is named store_**
+**Note**: The keyspace in this script is named `store`
 
-Enter into the interactive shell to begin querying:
+### 3. Enter the Interactive Shell
+
+```bash
 docker exec -it cassandra cqlsh
+```
 
-Now you’re in the interactive shell, and can begin querying:
+### Querying Examples
+Once in the interactive shell, you can query the database:
 
-Example with USE:
-
+### Example with USE:
+```sql
 USE store;
 SELECT \* FROM shopping_cart;
-
-Example without USE:
+```
+### Example without USE:
+```sql
 SELECT \* FROM store.shopping_cart;
-
+```
 Both examples will print all users from the shopping_cart table
 
 
