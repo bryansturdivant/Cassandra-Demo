@@ -1,5 +1,5 @@
 -- Where our code will go
-
+-- Using kaggle data from: https://www.kaggle.com/datasets/ciroduro01/best-selling-albums-of-all-time
 -- Creates a keyspace(creating a database)
 CREATE KEYSPACE IF NOT EXISTS albumDB WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor' : 1};
 
