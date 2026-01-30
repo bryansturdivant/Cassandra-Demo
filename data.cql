@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS albumDB.albums (
     album_name text,
     artist text,
     year INT,
-    sales INT,
+    sales_millions INT,
     decade INT,
     country text,
     genre text

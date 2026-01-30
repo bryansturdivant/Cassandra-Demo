@@ -49,3 +49,5 @@ Example without USE:
 SELECT \* FROM store.shopping_cart;
 
 Both examples will print all users from the shopping_cart table
+
+
