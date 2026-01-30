@@ -67,4 +67,65 @@ SELECT \* FROM store.shopping_cart;
 ```
 Both examples will print all users from the shopping_cart table
 
+**Note**: If you need to upload another script, you must exit the interactive shell. 
+
+**DROPPING TABLES**: If you want to start over fresh with our original table, you must drop it, and then create it again. Without needing to mess with our script, you can drop the table in the interactive shell with this: 
+
+```sql
+DROP TABLE keyspace_name.table_name;
+```
+
+OR drop the entire keyspace:
+
+```sql
+DROP KEYSPACE keyspace_name;
+```
+
+## CRUD Examples for Video/Reference:
+
+### 1. Create: 
+
+```sql
+CREATE KEYSPACE IF NOT EXISTS cityDB WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor' : 1};
+```
+
+```sql
+CREATE TABLE IF NOT EXISTS cityDB.cities (
+    id INT PRIMARY KEY,
+    name text,
+    countrycode text,
+    district text, 
+    population int
+);
+```
+
+### 2. Read:
+
+read all: 
+
+```sql
+SELECT * FROM cityDB.cities;
+```
+
+read some data:
+
+```sql
+SELECT name FROM cityDB.cities WHERE countrycode = 'AFG';
+```
+
+### 3. Update:
+
+```sql
+UPDATE cityDB.cities
+SET population = 1500
+WHERE id = 1;
+```
+
+### 4. Delete:
+
+```sql
+DELETE FROM cityDB.cities
+WHERE district = 'AFG';
+```
+
 
