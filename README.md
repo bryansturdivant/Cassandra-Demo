@@ -146,7 +146,12 @@ WHERE id = 1;
 
 ```sql
 DELETE FROM cityDB.cities
+WHERE id = 1;
+```
+You can only delete using a partition key in Cassandra. For example, using:
+
+```sql
+DELETE FROM cityDB.cities
 WHERE countrycode = 'AFG';
 ```
-
-
+WILL NOT WORK
