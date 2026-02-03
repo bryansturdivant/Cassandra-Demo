@@ -146,7 +146,7 @@ WHERE id = 1;
 
 ```sql
 DELETE FROM cityDB.cities
-WHERE district = 'AFG';
+WHERE countrycode = 'AFG';
 ```
 
 
